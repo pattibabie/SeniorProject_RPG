@@ -16,13 +16,14 @@ class CreateMonsters < ActiveRecord::Migration
       t.text :fort              #saving throws
       t.text :ref               #saving throws
       t.text :will              #saving throws
+      t.text :defensive_abilities
       t.text :dr                #damage reduction
       t.text :immune
       t.text :resist
       t.text :sr                #spell resistance
       t.text :weaknesses
       t.text :speed
-      t.text :melee
+      t.text :melee 
       t.text :ranged
       t.text :space
       t.text :reach
@@ -30,12 +31,18 @@ class CreateMonsters < ActiveRecord::Migration
       t.text :spell_like_abilities
       t.text :spells_known
       t.text :spells_prepared
-      t.text :ability_scores
+      t.text :str               #strength - ability score
+      t.text :dex               #dexterity - ability score
+      t.text :con               #constitution - ability score
+      t.text :int               #inititive - ability score
+      t.text :wis               #wisdom - ability score
+      t.text :cha               #charisma - ability score
       t.text :base_atk          #base attack
       t.text :cmb               #combat maneuver bonus
       t.text :cmd               #combat maneuver defense
       t.text :feats
       t.text :skills
+      t.text :racial_modifiers
       t.text :languages
       t.text :sq                #special qualities
       t.text :env               #environment description
