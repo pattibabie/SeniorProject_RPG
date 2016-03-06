@@ -23,7 +23,7 @@ class CreateMonsters < ActiveRecord::Migration
       t.text :sr                #spell resistance
       t.text :weaknesses
       t.text :speed
-      t.text :melee 
+      t.text :melee
       t.text :ranged
       t.text :space
       t.text :reach
