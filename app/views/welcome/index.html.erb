@@ -3,7 +3,7 @@
 
 <h2>Encounter Parameters:</h2>
 <p># of PCs:
-  <select>
+  <select id="user_input_number_of_PCs">
     <option value="one_PC">1</option><option value="two_PCs">2</option>
     <option value="three_PCs">3</option><option value="four_PCs">4</option>
     <option value="five_PCs">5</option><option value="six_PCs">6</option>
@@ -12,7 +12,7 @@
   </select>
 </p>
 <p>Level:
-  <select>
+  <select id="user_input_level">
     <option value="level_one">1</option><option value="level_two">2</option>
     <option value="level_three">3</option><option value="level_four">4</option>
     <option value="level_five">5</option><option value="level_six">6</option>
@@ -26,20 +26,20 @@
   </select>
 </p>
 <p>Plane:
-  <select>
+  <select id="user_input_plane">
     <option value="prime">Prime World</option><option value="non_prime">Non-Prime World</option>
   </select>
 </p>
 
 <p>Climate:
-  <select>
+  <select id="user_input_climate">
     <option value="climate_cold">Cold</option><option value="climate_temperate">Temperate</option>
     <option value="climate_warm">Warm</option><option value="climate_tropical">Tropical</option>
     <option value="climate_hot">Hot</option>
   </select>
 </p>
 <p>Terrain:
-  <select>
+  <select id="user_input_terrain">
     <option value="terrain_aquatic">Aquatic</option>
     <option value="terrain_desert">Deserts</option>
     <option value="terrain_forest">Forests</option>
@@ -55,8 +55,14 @@
 </p>
 <!--button goes here-->
 
-<h2>Encounter:</h2>
-<p><!--Name + Qty--></p>
+
+<button type="button">Generate Encounter!</button>
+
+<h1><%= @monsters.name %> </h1>
+<p>Level <%= @lvl %> <%= @race.name %> <%= @c_class.name %></p>
+
+<p><!--<b>Name + Qty<b/>--></p>
+<p><!--Name: description <br> Name, CR <br> XP <br> --></p>
 
   <!--saving this print link here for use when the generator is up and running-->
 <p>To print your encounter click here:
