@@ -27,7 +27,7 @@
 </p>
 <p>Plane:
   <select id="user_input_plane">
-    <option value="prime">Prime World</option><option value="non_prime">Non-Prime World</option>
+    <option value="plane_material">Material Plane</option><option value="plane_other">Outer/Elemental Plane</option>
   </select>
 </p>
 
@@ -57,12 +57,6 @@
 
 
 <button type="button">Generate Encounter!</button>
-
-<h1><%= @monsters.name %> </h1>
-<p>Level <%= @lvl %> <%= @race.name %> <%= @c_class.name %></p>
-
-<p><!--<b>Name + Qty<b/>--></p>
-<p><!--Name: description <br> Name, CR <br> XP <br> --></p>
 
   <!--saving this print link here for use when the generator is up and running-->
 <p>To print your encounter click here:
