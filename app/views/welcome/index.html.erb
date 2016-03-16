@@ -1,6 +1,7 @@
 <h1>Welcome to my RPG Random Encounter Generator!</h1>
 <p>I solemnly swear that I will be up to no good in no time.</p>
 
+<!--
 <h2>Encounter Parameters:</h2>
 <p># of PCs:
   <select id="user_input_number_of_PCs">
@@ -53,10 +54,17 @@
     <option value="terrain_urban">Urban</option>
   </select>
 </p>
-<!--button goes here-->
-
 
 <button type="button">Generate Encounter!</button>
+-->
+
+<%= form_tag({controller: "encounters", action: "new"}, method: :get, class: "e_gen") do %>
+
+    <%= label_tag(:terrain_id, "Terrain") %>
+    <%= select_tag(:terrain_id, options_from_collection_for_select(Terrain.all, :id, :name)) %>
+    <%= submit_tag("Generate Encounter!") %>
+
+<% end %>
 
   <!--saving this print link here for use when the generator is up and running-->
 <p>To print your encounter click here:

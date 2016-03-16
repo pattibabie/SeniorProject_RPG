@@ -11,12 +11,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160220153905) do
+ActiveRecord::Schema.define(version: 20160316001451) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "monster", force: :cascade do |t|
+  create_table "monster_terrains", force: :cascade do |t|
+    t.integer "terrain_id"
+    t.integer "monster_id"
+  end
+
+  add_index "monster_terrains", ["monster_id"], name: "index_monster_terrains_on_monster_id", using: :btree
+  add_index "monster_terrains", ["terrain_id"], name: "index_monster_terrains_on_terrain_id", using: :btree
+
+  create_table "monsters", force: :cascade do |t|
     t.text     "name"
     t.decimal  "cr",                   precision: 5, scale: 2
     t.integer  "xp"
@@ -68,6 +76,10 @@ ActiveRecord::Schema.define(version: 20160220153905) do
     t.text     "more_info_link"
     t.datetime "created_at",                                   null: false
     t.datetime "updated_at",                                   null: false
+  end
+
+  create_table "terrains", force: :cascade do |t|
+    t.text "name"
   end
 
 end

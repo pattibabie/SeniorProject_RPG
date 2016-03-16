@@ -1,4 +1,8 @@
 namespace :monsters do
+  task :destroy => :environment do |t, args|
+    Monster.delete_all
+  end
+
   task :setup => :environment do |t, args|
     Monster.create!(
         name:'Owlbear',
@@ -48,7 +52,7 @@ namespace :monsters do
         env:'temperate forests',
         organization:'solitary, pair, or pack (3–8)',
         treasure:'incidental',
-        special_abilites:'',
+        special_abilities:'',
         more_info_link:'http://www.d20pfsrd.com/bestiary/monster-listings/magical-beasts/owlbear'
     )
     Monster.create!(
@@ -99,7 +103,7 @@ namespace :monsters do
         env:'any land',
         organization:'solitary, gang (2–4), or pack (7–12)',
         treasure:'standard',
-        special_abilites:'Disease (Su): Ghoul Fever: Bite—injury; save Fort DC 13; onset 1 day; frequency 1/day; effect 1d3 Con and 1d3 Dex damage; cure 2 consecutive saves. The save DC is Charisma-based.',
+        special_abilities:'Disease (Su): Ghoul Fever: Bite—injury; save Fort DC 13; onset 1 day; frequency 1/day; effect 1d3 Con and 1d3 Dex damage; cure 2 consecutive saves. The save DC is Charisma-based.',
         more_info_link:'http://www.d20pfsrd.com/bestiary/monster-listings/undead/ghoul'
     )
     Monster.create!(
@@ -150,7 +154,7 @@ namespace :monsters do
         env:'any underground',
         organization:'solitary',
         treasure:'incidental',
-        special_abilites:'Acid (Ex), Engulf (Ex), Paralysis (Ex), Transparent (Ex)',
+        special_abilities:'Acid (Ex), Engulf (Ex), Paralysis (Ex), Transparent (Ex)',
         more_info_link:'http://www.d20pfsrd.com/bestiary/monster-listings/oozes/gelatinous-cube'
     )
     Monster.create!(
@@ -201,7 +205,7 @@ namespace :monsters do
         env:'any ocean',
         organization:'solitary, pair, school (3–6), or pack (7–13)',
         treasure:'none',
-        special_abilites:'',
+        special_abilities:'',
         more_info_link:'http://www.d20pfsrd.com/bestiary/monster-listings/animals/shark/shark'
     )
     Monster.create!(
@@ -252,7 +256,7 @@ namespace :monsters do
         env:'cold aquatic or underground',
         organization:'solitary or tide (2–6)',
         treasure:'standard',
-        special_abilites:'All-Around Vision (Ex), Maddening Cacophony (Su), Engulf (Ex)',
+        special_abilities:'All-Around Vision (Ex), Maddening Cacophony (Su), Engulf (Ex)',
         more_info_link:'http://www.d20pfsrd.com/bestiary/monster-listings/oozes/shoggoth'
     )
     Monster.create!(
@@ -303,7 +307,7 @@ namespace :monsters do
         env:'any land',
         organization:'solitary, pair, or team (3–6)',
         treasure:'NPC gear (scale mail, heavy mace, light crossbow with 10 bolts, other treasure)',
-        special_abilites:'',
+        special_abilities:'',
         more_info_link:'http://www.d20pfsrd.com/bestiary/monster-listings/outsiders/aasimar'
     )
     Monster.create!(
@@ -357,7 +361,7 @@ magic, purify food and drink, stabilize, virtue',
         env:'any (Heaven)',
         organization:'solitary, pair, or squad (3–5)',
         treasure:'standard',
-        special_abilites:'Trumpet (Su), Spells',
+        special_abilities:'Trumpet (Su), Spells',
         more_info_link:'http://www.d20pfsrd.com/bestiary/monster-listings/outsiders/archon/trumpet-archon'
     )
 =begin
@@ -409,7 +413,7 @@ magic, purify food and drink, stabilize, virtue',
         env:'',
         organization:'',
         treasure:'',
-        special_abilites:'',
+        special_abilities:'',
         more_info_link:''
     )
 =end
@@ -462,7 +466,7 @@ magic, purify food and drink, stabilize, virtue',
         env:'',
         organization:'',
         treasure:'',
-        special_abilites:'',
+        special_abilities:'',
         more_info_link:''
     )
 =end
@@ -515,7 +519,7 @@ magic, purify food and drink, stabilize, virtue',
         env:'',
         organization:'',
         treasure:'',
-        special_abilites:'',
+        special_abilities:'',
         more_info_link:''
     )
 =end
@@ -568,7 +572,7 @@ magic, purify food and drink, stabilize, virtue',
         env:'',
         organization:'',
         treasure:'',
-        special_abilites:'',
+        special_abilities:'',
         more_info_link:''
     )
 =end
