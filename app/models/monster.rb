@@ -1,4 +1,10 @@
 class Monster < ActiveRecord::Base
+  has_many :monster_planes
+  has_many :planes, through: :monster_planes
+
+  has_many :monster_climates
+  has_many :climates, through: :monster_climates
+
   has_many :monster_terrains
   has_many :terrains, through: :monster_terrains
 

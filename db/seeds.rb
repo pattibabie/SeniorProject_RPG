@@ -7,13 +7,14 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 Monster.delete_all
+Plane.delete_all
+Climate.delete_all
 Terrain.delete_all
 
 owlbear = Monster.create!(
     name:'Owlbear',
     cr:4,
     xp:1200,
-    environment_code:'',
     description:'An amalgam of fur and feathers, this bizarre half-bear, half-owl monstrosity raises its huge, ursine claws in anger.',
     race_class_level:'',
     align_size_type:'N Large magical beast',
@@ -64,7 +65,6 @@ ghoul = Monster.create!(
     name:'Ghoul',
     cr:1,
     xp:400,
-    environment_code:'',
     description:'This humanoid creature has long, sharp teeth, and its pallid flesh is stretched tightly over its starved frame.',
     race_class_level:'',
     align_size_type:'CE Medium undead',
@@ -115,7 +115,6 @@ ooze = Monster.create!(
     name:'Ooze (Gelatinous Cube)',
     cr:3,
     xp:800,
-    environment_code:'',
     description:'Bits of broken weapons, coins, and a partially digested skeleton are visible inside this quivering cube of slime.',
     race_class_level:'',
     align_size_type:'N Large ooze',
@@ -166,7 +165,6 @@ shark = Monster.create!(
     name:'Shark, Common',
     cr:2,
     xp:600,
-    environment_code:'',
     description:'This blue shark"s fins slice through the water, its black eyes rolling and its gaping jaws showing countless teeth.',
     race_class_level:'',
     align_size_type:'N Large animal (aquatic)',
@@ -217,7 +215,6 @@ shoggoth = Monster.create!(
     name:'Shoggoth',
     cr:19,
     xp:204800,
-    environment_code:'',
     description:'This immense mound of black slime thunders forward, eyes and mouths and even stranger things forming in its heaving bulk.',
     race_class_level:'',
     align_size_type:'CN Huge ooze (aquatic)',
@@ -268,7 +265,6 @@ aasimar = Monster.create!(
     name:'Aasimar',
     cr:0.5,
     xp:200,
-    environment_code:'',
     description:'This supernaturally beautiful woman looks human, yet emanates a strange sense of calm and benevolence.',
     race_class_level:'Aasimar cleric 1',
     align_size_type:'NG Medium outsider (native)',
@@ -319,7 +315,6 @@ archon = Monster.create!(
     name:'Archon, Trumpet',
     cr:14,
     xp:38400,
-    environment_code:'',
     description:'',
     race_class_level:'',
     align_size_type:'LG Medium outsider (archon, extraplanar, good, lawful)',
@@ -370,9 +365,42 @@ magic, purify food and drink, stabilize, virtue',
     more_info_link:'http://www.d20pfsrd.com/bestiary/monster-listings/outsiders/archon/trumpet-archon'
 )
 
-terrains = Terrain.create!([{name: 'Aquatic'},{name: 'Deserts'},{name: 'Forests'},{name: 'Glaciers'},
-                            {name: 'Hills'},{name: 'Mountains'},{name: 'Plains'},{name: 'Ruins'},
-                            {name: 'Swamps/Marshes'},{name: 'Underground'},{name: 'Urban'}])
+# Add to the environment tables: Plane, Climate, Terrain
+planes = Plane.create!([{name: 'Material Plane'}, {name: 'Outer/Elemental Plane'}])
+climates = Climate.create!([{name: 'Cold'},{name: 'Temperate'}, {name: 'Warm'}, {name: 'Tropical'}, {name: 'Hot'}])
+terrains = Terrain.create!([{name: 'Aquatic'}, {name: 'Deserts'}, {name: 'Forests'}, {name: 'Glaciers'},
+                            {name: 'Hills'}, {name: 'Mountains'}, {name: 'Plains'}, {name: 'Ruins'},
+                            {name: 'Swamps/Marshes'}, {name: 'Underground'}, {name: 'Urban'}])
+
+# Add to the monster_plane table
+owlbear.planes = [ Plane.find_by_name('Material Plane') ]
+ghoul.planes = [ Plane.find_by_name('Material Plane') ]
+ooze.planes = [ Plane.find_by_name('Material Plane') ]
+shark.planes = [ Plane.find_by_name('Material Plane') ]
+shoggoth.planes = [ Plane.find_by_name('Material Plane') ]
+aasimar.planes = [ Plane.find_by_name('Material Plane') ]
+archon.planes = [ Plane.find_by_name('Material Plane'), Plane.find_by_name('Outer/Elemental Plane') ]
+
+# Add to the monster_climate table
+owlbear.climates = [ Climate.find_by_name('Temperate') ]
+ghoul.climates = [ Climate.find_by_name('Cold'), Climate.find_by_name('Temperate'),
+                   Climate.find_by_name('Warm'), Climate.find_by_name('Tropical'),
+                   Climate.find_by_name('Hot') ]
+ooze.climates = [ Climate.find_by_name('Cold'), Climate.find_by_name('Temperate'),
+                  Climate.find_by_name('Warm'), Climate.find_by_name('Tropical'),
+                  Climate.find_by_name('Hot') ]
+shark.climates = [ Climate.find_by_name('Cold'), Climate.find_by_name('Temperate'),
+                   Climate.find_by_name('Warm'), Climate.find_by_name('Tropical'),
+                   Climate.find_by_name('Hot') ]
+shoggoth.climates = [ Climate.find_by_name('Cold'), Climate.find_by_name('Temperate'),
+                      Climate.find_by_name('Warm'), Climate.find_by_name('Tropical'),
+                      Climate.find_by_name('Hot') ]
+aasimar.climates = [ Climate.find_by_name('Cold'), Climate.find_by_name('Temperate'),
+                     Climate.find_by_name('Warm'), Climate.find_by_name('Tropical'),
+                     Climate.find_by_name('Hot') ]
+archon.climates = [ Climate.find_by_name('Cold'), Climate.find_by_name('Temperate'),
+                    Climate.find_by_name('Warm'), Climate.find_by_name('Tropical'),
+                    Climate.find_by_name('Hot') ]
 
 # Add to the monster_terrain table
 owlbear.terrains = [ Terrain.find_by_name('Forests') ]
