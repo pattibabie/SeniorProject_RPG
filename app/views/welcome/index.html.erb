@@ -62,11 +62,21 @@
 
     <%= label_tag(:terrain_id, "Terrain") %>
     <%= select_tag(:terrain_id, options_from_collection_for_select(Terrain.all, :id, :name)) %>
+
+    <%= label_tag(:terrain_id, "Terrain") %>
+    <%= select_tag(:terrain_id, options_from_collection_for_select(Terrain.all, :id, :name)) %>
+
+    <%= label_tag(:terrain_id, "Terrain") %>
+    <%= select_tag(:terrain_id, options_from_collection_for_select(Terrain.all, :id, :name)) %>
+
+    <%= label_tag(:terrain_id, "Terrain") %>
+    <%= select_tag(:terrain_id, options_from_collection_for_select(Terrain.all, :id, :name)) %>
+
     <%= submit_tag("Generate Encounter!") %>
 
 <% end %>
 
   <!--saving this print link here for use when the generator is up and running-->
-<p>To print your encounter click here:
-  <a href="#" onclick="window.print();return false;">print me</a>
-</p>
+<!--<p>To print your encounter click here:-->
+  <!--<a href="#" onclick="window.print();return false;">print me</a>-->
+<!--</p>-->

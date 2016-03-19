@@ -11,10 +11,30 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160316001451) do
+ActiveRecord::Schema.define(version: 20160318022007) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "climates", force: :cascade do |t|
+    t.text "name"
+  end
+
+  create_table "monster_climates", force: :cascade do |t|
+    t.integer "climate_id"
+    t.integer "monster_id"
+  end
+
+  add_index "monster_climates", ["climate_id"], name: "index_monster_climates_on_climate_id", using: :btree
+  add_index "monster_climates", ["monster_id"], name: "index_monster_climates_on_monster_id", using: :btree
+
+  create_table "monster_planes", force: :cascade do |t|
+    t.integer "plane_id"
+    t.integer "monster_id"
+  end
+
+  add_index "monster_planes", ["monster_id"], name: "index_monster_planes_on_monster_id", using: :btree
+  add_index "monster_planes", ["plane_id"], name: "index_monster_planes_on_plane_id", using: :btree
 
   create_table "monster_terrains", force: :cascade do |t|
     t.integer "terrain_id"
@@ -76,6 +96,10 @@ ActiveRecord::Schema.define(version: 20160316001451) do
     t.text     "more_info_link"
     t.datetime "created_at",                                   null: false
     t.datetime "updated_at",                                   null: false
+  end
+
+  create_table "planes", force: :cascade do |t|
+    t.text "name"
   end
 
   create_table "terrains", force: :cascade do |t|
