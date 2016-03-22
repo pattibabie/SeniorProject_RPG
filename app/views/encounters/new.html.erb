@@ -10,20 +10,47 @@
 <h4>---- DEFENSE ----</h4>
 <p><b>AC: </b><%= @mon.ac %></p>
 <p><b>HP: </b><%= @mon.hp %></p>
-<p><b>Fort: </b><%= @mon.fort %> &nbsp <b>Ref: </b><%= @mon.ref %><b> &nbsp Will: </b><%= @mon.will %></p>
-
+<p><b>Fort: </b><%= @mon.fort %> &nbsp <b>Ref: </b><%= @mon.ref %> &nbsp <b>Will: </b><%= @mon.will %></p>
 <p><b>Defensive Abilities: </b><%= @mon.defensive_abilities %> &nbsp <b>DR: </b><%= @mon.dr %> &nbsp
-  <b>Immune: </b><%= @mon.immune %><b> &nbsp Resist: </b><%= @mon.resist %></p>
+  <b>Immune: </b><%= @mon.immune %> &nbsp <b>Resist: </b><%= @mon.resist %> &nbsp <b>SR: </b><%= @mon.sr %></p>
 <p><b>Weaknesses: </b><%= @mon.weaknesses %></p>
 
+<h4>---- OFFENSE ----</h4>
+<p><b>Speed: </b><%= @mon.speed %></p>
+<p><b>Melee: </b><%= @mon.melee %></p>
+<p><b>Ranged: </b><%= @mon.ranged %></p>
+<p><b>Space: </b><%= @mon.space %> &nbsp <b>Reach: </b><%= @mon.reach %></p>
+<p><b>Special Attacks: </b><%= @mon.special_attacks %></p>
+<p><b>Spell-like Abilities: </b><%= @mon.spell_like_abilities %></p>
+<p><b>Spells Known: </b><%= @mon.spells_known %></p>
+<p><b>Spells Prepared: </b><%= @mon.spells_prepared %></p>
 
+<h4>---- STATISTICS ----</h4>
+<p><b>Str: </b><%= @mon.str %> &nbsp <b>Dex: </b><%= @mon.dex %> &nbsp <b>Con: </b><%= @mon.con %>
+  &nbsp <b>Int: </b><%= @mon.int %> &nbsp <b>Wis: </b><%= @mon.wis %> &nbsp <b>Cha: </b><%= @mon.cha %></p>
+<p><b>Base Atk: </b><%= @mon.base_atk %> &nbsp <b>CMB: </b><%= @mon.cmb %> &nbsp <b>CMD: </b><%= @mon.cmd %></p>
+<p><b>Feats: </b><%= @mon.feats %></p>
+<p><b>Skills: </b><%= @mon.skills %></p>
+<p><b>Racial Modifiers: </b><%= @mon.racial_modifiers %></p>
+<p><b>Languages: </b><%= @mon.languages %></p>
+<p><b>SQ: </b><%= @mon.sq %></p>
+
+<h4>---- SPECIAL ABILITIES ----</h4>
+<p><%= @mon.special_abilities %></p>
+
+<h4>---- ECOLOGY ----</h4>
+<p><b>Environment: </b><%= @mon.env %></p>
+<p><b>Organization: </b><%= @mon.organization %></p>
+<p><b>Treasure: </b><%= @mon.treasure %></p>
 
 <h4>---- XP ----</h4>
-<p>XP per player: <%= @xp_per_player %><br>
-<p>Total XP: <%= @tot_xp %><br>
+<p><b>XP per player: </b><%= @xp_per_player %></p>
+<p><b>Total XP: </b><%= @tot_xp %></p>
 
+<p>For more information on this being, click here:
+  <%= link_to 'More Info!', @mon.more_info_link %>
+</p>
 
-  <!--saving this print link here for use when the generator is up and running-->
-<p>To print your encounter click here:
-  <a href="#" onclick="window.print();return false;">print me</a>
+<p>To print your encounter, click here:
+  <a href="#" onclick="window.print();return false;">Print Encounter!</a>
 </p>
