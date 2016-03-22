@@ -315,7 +315,7 @@ archon = Monster.create!(
     name:'Archon, Trumpet',
     cr:14,
     xp:38400,
-    description:'',
+    description:'Lithe and beautiful, with skin the color of marble, this being hovers upon powerful, white wings and radiates a sense of serenity.',
     race_class_level:'',
     align_size_type:'LG Medium outsider (archon, extraplanar, good, lawful)',
     init:'+7',

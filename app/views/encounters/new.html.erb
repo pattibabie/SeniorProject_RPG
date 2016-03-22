@@ -1,7 +1,29 @@
-<h1>This page is where we will see the encounter generated.</h1>
-<p>I solemnly swear that I will be up to no good in no time.</p>
+<p><b># of PCs: </b><%= @pcs %> &nbsp <b>Level Average: </b><%= @lvl %></p>
+<h2><%= @mon.name %> x <%= @num_of_monsters %></h2>
+<p><%= @mon.description %></p>
+<p><b>CR: </b><%= @mon.cr %> &nbsp <b> XP: </b><%= @mon.xp %></p>
+<p><%= @mon.race_class_level %></p>
+<p><%= @mon.align_size_type %></p>
+<p><b>Init: </b><%= @mon.init %> &nbsp <b>Senses: </b><%= @mon.senses %></p>
+<p><b>Aura: </b><%= @mon.aura %></p>
 
-<!--saving this print link here for use when the generator is up and running-->
+<h4>---- DEFENSE ----</h4>
+<p><b>AC: </b><%= @mon.ac %></p>
+<p><b>HP: </b><%= @mon.hp %></p>
+<p><b>Fort: </b><%= @mon.fort %> &nbsp <b>Ref: </b><%= @mon.ref %><b> &nbsp Will: </b><%= @mon.will %></p>
+
+<p><b>Defensive Abilities: </b><%= @mon.defensive_abilities %> &nbsp <b>DR: </b><%= @mon.dr %> &nbsp
+  <b>Immune: </b><%= @mon.immune %><b> &nbsp Resist: </b><%= @mon.resist %></p>
+<p><b>Weaknesses: </b><%= @mon.weaknesses %></p>
+
+
+
+<h4>---- XP ----</h4>
+<p>XP per player: <%= @xp_per_player %><br>
+<p>Total XP: <%= @tot_xp %><br>
+
+
+  <!--saving this print link here for use when the generator is up and running-->
 <p>To print your encounter click here:
   <a href="#" onclick="window.print();return false;">print me</a>
 </p>
