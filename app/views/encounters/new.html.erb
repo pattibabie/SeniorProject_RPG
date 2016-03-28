@@ -1,55 +1,175 @@
 <p><b># of PCs: </b><%= @pcs %> &nbsp <b>Level Average: </b><%= @lvl %></p>
+
+<p>If you want a different encounter with the same level and environment <a href="javascript:history.go(0)">click here</a>.</p>
+
 <h2><%= @mon.name %> x <%= @num_of_monsters %></h2>
 <p><%= @mon.description %></p>
-<p><b>CR: </b><%= @mon.cr %> &nbsp <b> XP: </b><%= @mon.xp %></p>
-<p><%= @mon.race_class_level %></p>
-<p><%= @mon.align_size_type %></p>
-<p><b>Init: </b><%= @mon.init %> &nbsp <b>Senses: </b><%= @mon.senses %></p>
-<p><b>Aura: </b><%= @mon.aura %></p>
+
+<p>
+  <b>CR: </b><%= @mon.cr %> &nbsp <b> XP: </b><%= @mon.xp %><br>
+
+  <% if @mon.race_class_level != '' %>
+      <%= @mon.race_class_level %><br>
+  <% end %>
+  <% if @mon.align_size_type != '' %>
+      <%= @mon.align_size_type %><br>
+  <% end %>
+  <% if @mon.init != '' %>
+      <b>Init: </b><%= @mon.init %>
+  <% end %>
+  <% if @mon.senses != '' %>
+      <b>Senses: </b><%= @mon.senses %>
+  <% end %>
+  <br>
+  <% if @mon.aura != '' %>
+      <b>Aura: </b><%= @mon.aura %>
+  <% end %>
+</p>
 
 <h4>---- DEFENSE ----</h4>
-<p><b>AC: </b><%= @mon.ac %></p>
-<p><b>HP: </b><%= @mon.hp %></p>
-<p><b>Fort: </b><%= @mon.fort %> &nbsp <b>Ref: </b><%= @mon.ref %>
-  &nbsp <b>Will: </b><%= @mon.will %></p>
-<p><b>Defensive Abilities: </b><%= @mon.defensive_abilities %>
-  &nbsp <b>DR: </b><%= @mon.dr %> &nbsp <b>Immune: </b><%= @mon.immune %>
-  &nbsp <b>Resist: </b><%= @mon.resist %> &nbsp <b>SR: </b><%= @mon.sr %></p>
-<p><b>Weaknesses: </b><%= @mon.weaknesses %></p>
+<p>
+  <% if @mon.ac != '' %>
+      <b>AC: </b><%= @mon.ac %><br>
+  <% end %>
+
+  <% if @mon.hp != '' %>
+      <b>HP: </b><%= @mon.hp %><br>
+  <% end %>
+
+  <% if @mon.fort != '' %>
+      <b>Fort: </b><%= @mon.fort %>
+  <% end %>
+  <% if @mon.ref != '' %>
+      <b>Ref: </b><%= @mon.ref %>
+  <% end %>
+  <% if @mon.will != '' %>
+      <b>Will: </b><%= @mon.will %><br>
+  <% end %>
+  <% if @mon.defensive_abilities != '' %>
+      <b>Defensive Abilities: </b><%= @mon.defensive_abilities %>
+  <% end %>
+  <% if @mon.dr != '' %>
+      <b>DR: </b><%= @mon.dr %>
+  <% end %>
+  <% if @mon.immune != '' %>
+      <b>Immune: </b><%= @mon.immune %>
+  <% end %>
+  <% if @mon.resist != '' %>
+      <b>Resist: </b><%= @mon.resist %>
+  <% end %>
+  <% if @mon.sr != '' %>
+      <b>SR: </b><%= @mon.sr %>
+  <% end %>
+  <br>
+  <% if @mon.weaknesses != '' %>
+      <b>Weaknesses: </b><%= @mon.weaknesses %>
+  <% end %>
+</p>
 
 <h4>---- OFFENSE ----</h4>
-<p><b>Speed: </b><%= @mon.speed %></p>
-<p><b>Melee: </b><%= @mon.melee %></p>
-<p><b>Ranged: </b><%= @mon.ranged %></p>
-<p><b>Space: </b><%= @mon.space %> &nbsp <b>Reach: </b><%= @mon.reach %></p>
-<p><b>Special Attacks: </b><%= @mon.special_attacks %></p>
-<p><b>Spell-like Abilities: </b><%= @mon.spell_like_abilities %></p>
-<p><b>Spells Known: </b><%= @mon.spells_known %></p>
-<p><b>Spells Prepared: </b><%= @mon.spells_prepared %></p>
+<p>
+  <% if @mon.speed != '' %>
+      <b>Speed: </b><%= @mon.speed %><br>
+  <% end %>
+  <% if @mon.melee != '' %>
+      <b>Melee: </b><%= @mon.melee %><br>
+  <% end %>
+  <% if @mon.ranged != '' %>
+      <b>Ranged: </b><%= @mon.ranged %><br>
+  <% end %>
+
+  <% if @mon.space != '' %>
+      <b>Space: </b><%= @mon.space %>
+  <% end %>
+  <% if @mon.reach != '' %>
+      <b>Reach: </b><%= @mon.reach %>
+  <% end %>
+  <% if @mon.space != '' || @mon.reach != ''%>
+      <br>
+  <% end %>
+
+  <% if @mon.special_attacks != '' %>
+      <b>Special Attacks: </b><%= @mon.special_attacks %><br>
+  <% end %>
+  <% if @mon.spell_like_abilities != '' %>
+      <b>Spell-like Abilities: </b><%= @mon.spell_like_abilities %><br>
+  <% end %>
+  <% if @mon.spells_known != '' %>
+      <b>Spells Known: </b><%= @mon.spells_known %><br>
+  <% end %>
+  <% if @mon.spells_prepared != '' %>
+      <b>Spells Prepared: </b><%= @mon.spells_prepared %>
+  <% end %>
+</p>
 
 <h4>---- STATISTICS ----</h4>
-<p><b>Str: </b><%= @mon.str %> &nbsp <b>Dex: </b><%= @mon.dex %>
-  &nbsp <b>Con: </b><%= @mon.con %> &nbsp <b>Int: </b><%= @mon.int %>
-  &nbsp <b>Wis: </b><%= @mon.wis %> &nbsp <b>Cha: </b><%= @mon.cha %></p>
-<p><b>Base Atk: </b><%= @mon.base_atk %> &nbsp <b>CMB: </b><%= @mon.cmb %>
-  &nbsp <b>CMD: </b><%= @mon.cmd %></p>
-<p><b>Feats: </b><%= @mon.feats %></p>
-<p><b>Skills: </b><%= @mon.skills %></p>
-<p><b>Racial Modifiers: </b><%= @mon.racial_modifiers %></p>
-<p><b>Languages: </b><%= @mon.languages %></p>
-<p><b>SQ: </b><%= @mon.sq %></p>
+<p>
+  <% if @mon.str != '' %>
+      <b>Str: </b><%= @mon.str %>
+  <% end %>
+  <% if @mon.dex != '' %>
+      <b>Dex: </b><%= @mon.dex %>
+  <% end %>
+  <% if @mon.con != '' %>
+      <b>Con: </b><%= @mon.con %>
+  <% end %>
+  <% if @mon.int != '' %>
+      <b>Int: </b><%= @mon.int %>
+  <% end %>
+  <% if @mon.wis != '' %>
+      <b>Wis: </b><%= @mon.wis %>
+  <% end %>
+  <% if @mon.cha != '' %>
+      <b>Cha: </b><%= @mon.cha %><br>
+  <% end %>
 
-<h4>---- SPECIAL ABILITIES ----</h4>
-<p><%= @mon.special_abilities %></p>
+  <% if @mon.base_atk != '' %>
+      <b>Base Atk: </b><%= @mon.base_atk %>
+  <% end %>
+  <% if @mon.cmb != '' %>
+      <b>CMB: </b><%= @mon.cmb %>
+  <% end %>
+  <% if @mon.cmd != '' %>
+      <b>CMD: </b><%= @mon.cmd %>
+  <% end %>
+  <% if @mon.base_atk != '' || @mon.cmb != '' || @mon.cmd != ''%>
+      <br>
+  <% end %>
+
+  <% if @mon.feats != '' %>
+      <b>Feats: </b><%= @mon.feats %><br>
+  <% end %>
+  <% if @mon.skills != '' %>
+      <b>Skills: </b><%= @mon.skills %><br>
+  <% end %>
+  <% if @mon.racial_modifiers != '' %>
+      <b>Racial Modifiers: </b><%= @mon.racial_modifiers %><br>
+  <% end %>
+  <% if @mon.languages != '' %>
+      <b>Languages: </b><%= @mon.languages %><br>
+  <% end %>
+  <% if @mon.sq != '' %>
+      <b>SQ: </b><%= @mon.sq %><br>
+  <% end %>
+</p>
+
+<% if @mon.special_abilities != '' %>
+  <h4>---- SPECIAL ABILITIES ----</h4>
+  <p><%= @mon.special_abilities %></p>
+<% end %>
 
 <h4>---- ECOLOGY ----</h4>
-<p><b>Environment: </b><%= @mon.env %></p>
-<p><b>Organization: </b><%= @mon.organization %></p>
-<p><b>Treasure: </b><%= @mon.treasure %></p>
+<p>
+  <b>Environment: </b><%= @mon.env %><br>
+  <b>Organization: </b><%= @mon.organization %><br>
+  <b>Treasure: </b><%= @mon.treasure %>
+</p>
 
 <h4>---- XP ----</h4>
-<p><b>XP per player: </b><%= @xp_per_player %></p>
-<p><b>Total XP: </b><%= @tot_xp %></p>
+<p>
+  <b>XP per player: </b><%= @xp_per_player %><br>
+  <b>Total XP: </b><%= @tot_xp %>
+</p>
 
 <p>For more information on this being, click here:
   <%= link_to 'More Info!', @mon.more_info_link %>
