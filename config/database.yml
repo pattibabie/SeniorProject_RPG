@@ -8,7 +8,7 @@
 #   gem install pg -- --with-pg-config=/opt/local/lib/postgresql84/bin/pg_config
 # On Windows:
 #   gem install pg
-#       Choose the win32 build.
+#       Choose the win32 build. #meow
 #       Install PostgreSQL and put its /bin directory on your path.
 #
 # Configure Using Gemfile
@@ -20,10 +20,10 @@ default: &default
   # For details on connection pooling, see rails configuration guide
   # http://guides.rubyonrails.org/configuring.html#database-pooling
   pool: 5
-  username: pcsryxlqaqkcaz
-  password: pYhJa-JSVjVn81TT0LSJQ0d1k3
-  host: "ec2-54-235-153-179.compute-1.amazonaws.com"
-  database: d63t6sovag0fm0
+  username: eowrhgxdeqgalj
+  password: lyYAL94Ymacjoy_M72FIzpQK9G
+  host: "ec2-54-83-198-159.compute-1.amazonaws.com"
+  database: db1i2jn0j7aggo
   port: 5432
   sslmode: require
 
