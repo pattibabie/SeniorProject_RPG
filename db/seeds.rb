@@ -662,7 +662,7 @@ frumious_bandersnatch = Monster.create!(
     organization:'solitary',
     treasure:'incidental',
     special_abilities:'Bounding Charge (Ex), Brutal Tail (Ex), Fury (Su), Gaze (Su), Lash Out (Ex), Pain (Ex), Planar Acclimation (Ex), Quill Defense (Ex), Quick Recovery (Su), Quills (Ex), Relentless Tracker (Ex)',
-    more_info_link:''
+    more_info_link:'http://www.d20pfsrd.com/bestiary/monster-listings/magical-beasts/bandersnatch/bandersnatch-frumious'
 )
 # Add to the environment tables: Plane, Climate, Terrain
 planes = Plane.create!([{name: 'Material Plane'}, {name: 'Outer/Elemental Plane'}])

@@ -171,10 +171,10 @@
   <b>Total XP: </b><%= @tot_xp %>
 </p>
 
-<p>For more information on this being, click here:
-  <%= link_to 'More Info!', @mon.more_info_link %>
+<p>
+  For more information on this being, <%= link_to 'click here', @mon.more_info_link %>.
 </p>
 
-<p>To print your encounter, click here:
-  <a href="#" onclick="window.print();return false;">Print Encounter!</a>
+<p>
+  To print your encounter, <a href="#" onclick="window.print();return false;">click here</a>.
 </p>
