@@ -1,0 +1,3 @@
+module MonstersHelper
+  #meow
+end

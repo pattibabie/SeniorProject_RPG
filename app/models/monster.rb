@@ -14,4 +14,5 @@ class Monster < ActiveRecord::Base
   #   monster = Monster.find(id)
   #   @monster_array.push(self.id)
   # end
+
 end
