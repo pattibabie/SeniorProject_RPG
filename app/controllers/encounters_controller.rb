@@ -26,11 +26,12 @@ class EncountersController < ApplicationController
     @current_plane = Plane.find_by_id(@plane).name
     @outer_plane = Plane.find_by_name('Outer/Elemental Plane')
     @plane_name = @plane
+    @actual_level = get_cr_or_level(@pcs, @lvl)
 
     # @monster_array.push(MonsterPlane.find())
     Monster.all.each do |monster|
-      if monster.cr <= @lvl
-        #Adds all outer plane beings of the appropriate level #meow
+      if monster.cr <= @actual_level
+        # Adds all outer plane beings of the appropriate level
         if monster.planes.exists?(@outer_plane)
           @monster_array.push(monster.id)
         end
@@ -48,21 +49,28 @@ class EncountersController < ApplicationController
 
   def generate_encounter
     dn = roll(@monster_array.length)
-
     @d20 = d20_roll
     @m_id = @monster_array[dn - 1]
     @mon = Monster.find_by_id(@m_id)
+    @mon_cr = get_cr_or_level(@pcs, @mon.cr)
 
-    #level avg / random monster's challenge rating
-    @num_of_monsters = (@lvl / @mon.cr).to_i
+    # level avg / random monster's challenge rating
+    @num_of_monsters = (@lvl / @mon_cr).to_i
 
-    # roll die to possibly add more monsters for challenge
-    if @d20 >= 15 && @d20 < 20
-      @num_of_monsters += 1
-    elsif @d20 == 20
-      @num_of_monsters += 3
+    # Prevents the # of monsters in the encounter from being nonexistent or
+    # exceeding the max # of monsters that can be found together.
+    # Also randomly adds or does not add an extra element of difficulty by
+    # adding more monsters depending on a d20 dice roll.
+    if @num_of_monsters < 1
+      @num_of_monsters = 1
+      @num_of_monsters = rand_add(@d20, @num_of_monsters)
+    elsif @num_of_monsters > @mon.max_num
+      @num_of_monsters = @mon.max_num
+      @num_of_monsters = rand_add(@d20, @num_of_monsters)
     end
+  end
 
+  def calculate_xp
     # XP Calculator
     @xp_per_player = xp_per_pc(@mon.xp, @num_of_monsters, @pcs)
     @tot_xp = total_xp(@mon.xp, @num_of_monsters)
@@ -72,6 +80,7 @@ class EncountersController < ApplicationController
     set_inputs
     fill_monster_array
     generate_encounter
+    calculate_xp
   end
 end
 

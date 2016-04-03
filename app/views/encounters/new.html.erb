@@ -102,6 +102,11 @@
   <% end %>
 </p>
 
+<% if @mon.tactics != '' %>
+    <h4>---- TACTICS ----</h4>
+    <p><%= @mon.tactics %></p>
+<% end %>
+
 <h4>---- STATISTICS ----</h4>
 <p>
   <% if @mon.str != '' %>
@@ -150,6 +155,9 @@
   <% end %>
   <% if @mon.sq != '' %>
       <b>SQ: </b><%= @mon.sq %><br>
+  <% end %>
+  <% if @mon.gear != '' %>
+      <b>Gear: </b><%= @mon.gear %><br>
   <% end %>
 </p>
 

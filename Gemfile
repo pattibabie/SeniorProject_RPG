@@ -25,6 +25,8 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem 'simple_form'
 
+gem 'rails_12factor'
+
 ruby '2.2.4'
 
 # Use ActiveModel has_secure_password

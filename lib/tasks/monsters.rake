@@ -413,7 +413,9 @@ magic, purify food and drink, stabilize, virtue',
     organization:'',
     treasure:'',
     special_abilities:'',
-    more_info_link:''
+    more_info_link:'',
+    max_num:,
+    gear:''
 )
 Monster.create!(
     name:'',
