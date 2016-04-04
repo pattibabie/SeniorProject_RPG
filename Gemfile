@@ -51,3 +51,4 @@ group :development do
   gem 'spring'
 end
 
+gem "passenger", ">= 5.0.25"
