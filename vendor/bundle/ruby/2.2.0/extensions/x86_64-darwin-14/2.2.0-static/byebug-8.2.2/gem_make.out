@@ -1,0 +1,15 @@
+/Users/Fizgig/.rbenv/versions/2.2.4/bin/ruby -r ./siteconf20160403-6682-1ghx535.rb extconf.rb
+creating Makefile
+
+make "DESTDIR=" clean
+
+make "DESTDIR="
+compiling breakpoint.c
+compiling byebug.c
+compiling context.c
+compiling locker.c
+compiling threads.c
+linking shared-object byebug/byebug.bundle
+
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 byebug.bundle ./.gem.20160403-6682-1m7jmjc/byebug

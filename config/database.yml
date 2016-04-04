@@ -20,10 +20,10 @@ default: &default
   # For details on connection pooling, see rails configuration guide
   # http://guides.rubyonrails.org/configuring.html#database-pooling
   pool: 5
-  username: eowrhgxdeqgalj
-  password: lyYAL94Ymacjoy_M72FIzpQK9G
-  host: "ec2-54-83-198-159.compute-1.amazonaws.com"
-  database: db1i2jn0j7aggo
+  username: <%= ENV['DATABASE_USERNAME'] %>
+  password: <%= ENV['DATABASE_PASSWORD'] %>
+  host: <%= ENV['DATABASE_HOST'] %>
+  database: <%= ENV['DATABASE'] %>
   port: 5432
   sslmode: require
 
