@@ -3,7 +3,7 @@
 <%= form_tag({controller: "encounters", action: "new"}, method: :get, class: "e_gen") do %>
 
     <%= label_tag(:pcs, "Number of PCs:") %>
-    <%= select_tag(:pcs, options_for_select(1..10)) %><br><br>
+    <%= select_tag(:pcs, options_for_select(1..8)) %><br><br>
 
     <%= label_tag(:lvl, "Level Average:") %>
     <%= select_tag(:lvl, options_for_select(1..20)) %><br><br>
