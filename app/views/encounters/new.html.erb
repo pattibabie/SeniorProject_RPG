@@ -2,7 +2,10 @@
 
 <p>If you want a different encounter with the same level and environment <a href="javascript:history.go(0)">click here</a>.</p>
 
+<p>To start over, <a href="/welcome/index"> click here</a>.</p>
+
 <h2><%= @mon.name %> x <%= @num_of_monsters %></h2>
+
 <p><%= @mon.description %></p>
 
 <p>
@@ -179,10 +182,6 @@
   <b>Total XP: </b><%= @tot_xp %>
 </p>
 
-<p>
-  For more information on this being, <%= link_to 'click here', @mon.more_info_link %>.
-</p>
+<p>For more information on this encounter, <%= link_to 'click here', @mon.more_info_link %>.</p>
 
-<p>
-  To print your encounter, <a href="#" onclick="window.print();return false;">click here</a>.
-</p>
+<p>To print your encounter, <a href="#" onclick="window.print();return false;">click here</a>.</p>
