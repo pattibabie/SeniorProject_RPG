@@ -83,4 +83,3 @@ class EncountersController < ApplicationController
     calculate_xp
   end
 end
-

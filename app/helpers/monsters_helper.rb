@@ -1,3 +1,2 @@
 module MonstersHelper
-  #meow
 end

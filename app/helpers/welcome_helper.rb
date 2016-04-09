@@ -1,3 +1,2 @@
 module WelcomeHelper
-  #meow
 end
