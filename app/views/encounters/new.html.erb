@@ -63,7 +63,10 @@
   <% if @mon.sr != '' %>
       <b>SR: </b><%= @mon.sr %>
   <% end %>
-  <br>
+  <% if @mon.defensive_abilities != '' || @mon.dr != '' || @mon.immune != '' ||
+      @mon.resist != ''|| @mon.sr != ''%>
+      <br>
+  <% end %>
   <% if @mon.weaknesses != '' %>
       <b>Weaknesses: </b><%= @mon.weaknesses %>
   <% end %>
