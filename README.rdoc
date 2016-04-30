@@ -3,8 +3,11 @@
 The Beatdown Generator is a Pathfinder RPG Random Encounter Generator created as my Senior Project at Westminster College in Spring 2016. Author: Patricia Bailey
 
 Language: Ruby 2.2.4
+
 Framework: Rails 4.2.5.1
+
 Database: PostgreSQL
+
 Deployment: Heroku
 
 Website: https://thebeatdowngenerator.herokuapp.com/ 
