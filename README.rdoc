@@ -1,28 +1,10 @@
-== README
+== The Beatdown Generator
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+The Beatdown Generator is a Pathfinder RPG Random Encounter Generator created as my Senior Project at Westminster College in Spring 2016. Author: Patricia Bailey
 
-Things you may want to cover:
+Language: Ruby 2.2.4
+Framework: Rails 4.2.5.1
+Database: PostgreSQL
+Deployment: Heroku
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+Website: https://thebeatdowngenerator.herokuapp.com/ 
